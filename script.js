@@ -1,7 +1,7 @@
 const SortButton = document.getElementById("sort");
 
 
-/* const bubbleSort = (array) => {
+const bubbleSort = (array) => {
 
     for (let i=0; i<array.length;i++)
     {
@@ -19,10 +19,10 @@ const SortButton = document.getElementById("sort");
 
 
 }
-*/
 
 
-/*const selectionSort = (array)=>
+
+const selectionSort = (array)=>
 {
 
     for (let i=0;i<array.length; i++)
@@ -43,7 +43,7 @@ const SortButton = document.getElementById("sort");
     return array;
    
 }
-*/
+
 
 const insertionSort = (array) => {
     for (let i = 1; i < array.length; i++) {
@@ -82,9 +82,9 @@ const sortInptArray = (event) => {
 
     const outputArray = [...document.getElementsByClassName("values-dropdown")].map((dropdown)=> Number(dropdown.value));
 
-    //const sortetArray = bubbleSort(outputArray);
-   // const sortetArray = selectionSort(outputArray);
-    const  sortetArray = insertionSort(outputArray);
+    const sortetArray1 = bubbleSort(outputArray);
+    const sortetArray2 = selectionSort(outputArray);
+    const sortetArray = insertionSort(outputArray);
 
     dispayArray(sortetArray);
 
