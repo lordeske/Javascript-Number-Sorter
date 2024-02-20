@@ -1,7 +1,7 @@
 const SortButton = document.getElementById("sort");
 
 
-const bubbleSort = (array) => {
+/* const bubbleSort = (array) => {
 
     for (let i=0; i<array.length;i++)
     {
@@ -16,6 +16,33 @@ const bubbleSort = (array) => {
         }
     }
     return array;
+
+
+}
+*/
+
+
+const selectionSort = (array)=>
+{
+
+    for (let i=0;i<array.length; i++)
+    {
+        let minIndex = i;
+
+        for (let j =i+1 ; j<array.length;j++)
+        {
+            if(array[j]< array[minIndex])
+            {
+                minIndex = j;
+            }
+        }
+        const temp = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = temp;
+    }
+    return array;
+    
+
 
 
 }
@@ -43,7 +70,8 @@ const sortInptArray = (event) => {
 
     const outputArray = [...document.getElementsByClassName("values-dropdown")].map((dropdown)=> Number(dropdown.value));
 
-    const sortetArray = bubbleSort(outputArray);
+    //const sortetArray = bubbleSort(outputArray);
+    const sortetArray = selectionSort(outputArray);
 
     dispayArray(sortetArray);
 
